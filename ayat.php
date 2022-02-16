@@ -85,10 +85,10 @@ $surah = get_ayat($surah_id);
                     <div class="col-12">
                         <div class="card hero2 mb-3 p-4">
                             <div class="row mb-3">
-                                <div class="col-3 col-md-1 align-self-center">
+                                <div class="col-3 col-md-6 align-self-center">
                                     <p class="card-text fw-bold">Ayat <?= $surah["no_ayat"]; ?></p>
                                 </div>
-                                <div class="col-9 col-md-11">
+                                <div class="col-9 col-md-6">
                                     <audio id="audio" controls="controls" style="width: 100%;">
                                         <source src="<?= $surah["audio_ayat"]; ?>">
                                         </source>
