@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+body {
+    background-color: #EFF2FA;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #777; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card {
+    box-shadow: 0px 5px 15px 0px rgb(206, 210, 223);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(.97);
+}
+
+.card.hero {
+    background: rgb(22,148,242);
+    background: linear-gradient(45deg, rgba(22,148,242,1) 0%, rgba(11,201,255,1) 100%);
+    color: white !important;
+    box-shadow: 0px 5px 15px 0px rgb(206, 210, 223);
+}
+
+.card.hero:hover {
+    transform: scale(1);
+}
+
+.card.hero2:hover {
+    transform: scale(1);
+}
+
+.info {
+    font-size: 12px;
+}
+
+.btn:focus, .btn:active, .btn:hover{
+    box-shadow: none!important;
+    outline: 0;
+}
+
