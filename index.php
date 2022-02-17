@@ -31,7 +31,7 @@ $surah = get_surah();
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6">
-                                    <h1 class="card-title fw-bold" style="cursor: pointer;" onclick="document.location.href = 'index.php';">Quran</h1>
+                                    <h1 class="card-title fw-bold lh-base" style="cursor: pointer;" onclick="document.location.href = 'index.php';">Daily Quran</h1>
                                 </div>
                                 <div class="col-6 align-self-center">
                                     <div class="text-end">

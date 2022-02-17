@@ -59,6 +59,11 @@ body {
     font-size: 12px;
 }
 
+.btn-primary {
+    background: #00B1FF !important;
+    border-color: #00B1FF !important;
+}
+
 .btn:focus, .btn:active, .btn:hover{
     box-shadow: none!important;
     outline: 0;

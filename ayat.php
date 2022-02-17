@@ -32,7 +32,7 @@ $surah = get_ayat($surah_id);
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6">
-                                    <h1 class="card-title fw-bold" style="cursor: pointer;" onclick="document.location.href = 'index.php';">Quran</h1>
+                                    <h1 class="card-title fw-bold lh-base" style="cursor: pointer;" onclick="document.location.href = 'index.php';">Daily Quran</h1>
                                 </div>
                                 <div class="col-6 align-self-center">
                                     <div class="text-end">
@@ -67,10 +67,26 @@ $surah = get_ayat($surah_id);
                 <div class="col">
                     <div class="card hero2">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold mb-1"><?= $surah["no_surah"]; ?>. <?= $surah["nama_surah"]; ?></h5>
-                            <p class="card-text mb-3"><?= $surah["arti_surah"]; ?> | <?= $surah["turun_surah"]; ?> | <?= $surah["ayat_surah"]; ?> Ayat</p>
-                            <p class="card-text mb-1 fw-bold">Tafsir Surah</p>
-                            <p class="card-text" style="text-align: justify;"><?= $surah["tafsir_surah"]; ?></p>
+                            <div class="row mb-1">
+                                <div class="col align-self-center">
+                                    <h5 class="card-text fw-bold"><?= $surah["no_surah"]; ?>. <?= $surah["nama_surah"]; ?></h5>
+                                </div>
+                                <div class="col text-end">
+                                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        Tafsir
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="card-text mb-1"><?= $surah["arti_surah"]; ?></p>
+                                    <p class="card-text text-secondary info"><?= $surah["turun_surah"]; ?> | <?= $surah["ayat_surah"]; ?> Ayat</p>
+                                </div>
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                                <p class="card-text fw-bold mt-3 mb-1">Tafsir Surah</p>
+                                <p class="card-text"><?= $surah["tafsir_surah"]; ?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,6 +115,14 @@ $surah = get_ayat($surah_id);
                                 <div class="col-12">
                                     <h1 class="card-title text-end text-ayat lh-base mb-3"><?= $surah["text_ayat"]; ?></h1>
                                     <p class="card-text"><?= $surah["arti_ayat"]; ?></p>
+                                    <div class="text-end">
+                                        <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?= $surah["no_ayat"]; ?>" aria-expanded="false" aria-controls="collapseExample<?= $surah["no_ayat"]; ?>">
+                                            Tafsir Ayat
+                                        </button>
+                                    </div>
+                                    <div class="collapse" id="collapseExample<?= $surah["no_ayat"]; ?>">
+                                        <p class="card-text mt-3"><?= $surah["tafsir_ayat"]; ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
