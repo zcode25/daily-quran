@@ -40,6 +40,14 @@ function get_ayat($surah_id)
     $surah["turun_surah"] = $result["revelation"]["id"];
     $surah["ayat_surah"] = $result["numberOfVerses"];
     $surah["tafsir_surah"] = $result["tafsir"]["id"];
+    $surah["bismillah"] = $result["preBismillah"];
+
+    if ($result["preBismillah"]) {
+        $surah["text_bismillah"] = $result["preBismillah"]["text"]["arab"];
+        $surah["arti_bismillah"] = $result["preBismillah"]["translation"]["id"];
+        $surah["audio_bismillah"] = $result["preBismillah"]["audio"]["primary"];
+    }
+
     $i = 0;
     foreach ($result["verses"] as $result) {
         $surah["ayat"][$i]["no_ayat"] = $result["number"]["inSurah"];

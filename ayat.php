@@ -96,6 +96,24 @@ $surah = get_ayat($surah_id);
 
     <section class="ayat" id="ayat">
         <div class="container">
+            <div class="row" style="<?= ($surah["bismillah"] == null) ? 'display: none;' : 'display: block;'; ?>">
+                <div class="col-12">
+                    <div class="card hero2 mb-3 p-4">
+                        <div class="row mb-3 d-flex justify-content-end">
+                            <div class="col-6 col-md-4 col-xl-3 align-self-center">
+                                <audio id="audio" controls="controls">
+                                    <source src="<?= $surah["audio_bismillah"]; ?>">
+                                    </source>
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h1 class="card-title text-ayat lh-base mb-3"><?= $surah["text_bismillah"]; ?></h1>
+                            <p class="card-text"><?= $surah["arti_bismillah"]; ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <?php foreach ($surah["ayat"] as $surah) : ?>
                     <div class="col-12">
