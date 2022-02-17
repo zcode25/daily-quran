@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Noto+Naskh+Arabic&family=Roboto&display=swap');
 
 body {
     background-color: #EFF2FA;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+}
+
+.text-ayat {
+    font-family: 'Noto Naskh Arabic', serif;
 }
 
 ::-webkit-scrollbar {
@@ -60,3 +64,25 @@ body {
     outline: 0;
 }
 
+audio  {
+    width: 100%;
+    height: 35px;
+}
+
+audio::-webkit-media-controls-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+audio::-webkit-media-controls-timeline {
+    display: none !important;
+}
+
+audio::-webkit-media-controls-current-time-display {
+    display: none;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}

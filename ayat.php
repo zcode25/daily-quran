@@ -85,11 +85,11 @@ $surah = get_ayat($surah_id);
                     <div class="col-12">
                         <div class="card hero2 mb-3 p-4">
                             <div class="row mb-3">
-                                <div class="col-3 col-md-6 align-self-center">
+                                <div class="col-6 col-md-8 col-xl-9 align-self-center">
                                     <p class="card-text fw-bold">Ayat <?= $surah["no_ayat"]; ?></p>
                                 </div>
-                                <div class="col-9 col-md-6">
-                                    <audio id="audio" controls="controls" style="width: 100%;">
+                                <div class="col-6 col-md-4 col-xl-3 align-self-center">
+                                    <audio id="audio" controls="controls">
                                         <source src="<?= $surah["audio_ayat"]; ?>">
                                         </source>
                                     </audio>
@@ -97,7 +97,7 @@ $surah = get_ayat($surah_id);
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <h1 class="card-title fw-bold text-end lh-base mb-3"><?= $surah["text_ayat"]; ?></h1>
+                                    <h1 class="card-title text-end text-ayat lh-base mb-3"><?= $surah["text_ayat"]; ?></h1>
                                     <p class="card-text"><?= $surah["arti_ayat"]; ?></p>
                                 </div>
                             </div>
