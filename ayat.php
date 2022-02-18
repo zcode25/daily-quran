@@ -144,7 +144,7 @@ $surah = get_ayat($surah_id);
                                     <h1 class="card-title text-end text-ayat lh-base mb-3"><?= $surah["text_ayat"]; ?></h1>
                                     <p class="card-text"><?= $surah["arti_ayat"]; ?></p>
                                     <div class="text-end">
-                                        <button class="btn btn-outline-primary btn-sm tafsir" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?= $surah["no_ayat"]; ?>" aria-expanded="false" aria-controls="collapseExample<?= $surah["no_ayat"]; ?>">
+                                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?= $surah["no_ayat"]; ?>" aria-expanded="false" aria-controls="collapseExample<?= $surah["no_ayat"]; ?>">
                                             Tafsir Ayat
                                         </button>
                                     </div>
