@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Noto+Naskh+Arabic&family=Roboto&display=swap');
+
 @font-face {
     font-family: 'arab';
-    src: url('font/UthmanTN1B Ver07.otf');
+    src: url('../font/AlQalamQuranMajeed2.ttf') format('truetype');
 }
 
 body {

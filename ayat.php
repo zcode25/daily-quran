@@ -118,7 +118,7 @@ $surah = get_ayat($surah_id);
                             </div>
                         </div>
                         <div class="text-center">
-                            <h1 class="card-title text-ayat lh-base mb-3"><?= $surah["text_bismillah"]; ?></h1>
+                            <h1 class="card-title text-ayat lh-lg mb-3"><?= $surah["text_bismillah"]; ?></h1>
                             <p class="card-text"><?= $surah["arti_bismillah"]; ?></p>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ $surah = get_ayat($surah_id);
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <h1 class="card-title text-end text-ayat lh-base mb-3"><?= $surah["text_ayat"]; ?></h1>
+                                    <h1 class="card-title text-end text-ayat lh-lg mb-3"><?= $surah["text_ayat"]; ?></h1>
                                     <p class="card-text"><?= $surah["arti_ayat"]; ?></p>
                                     <div class="text-end">
                                         <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?= $surah["no_ayat"]; ?>" aria-expanded="false" aria-controls="collapseExample<?= $surah["no_ayat"]; ?>">
