@@ -48,8 +48,27 @@ body {
 }
 
 img {
-    -webkit-filter: drop-shadow(0px 10px 15px rgba(0,0,0,.15));
-    filter: drop-shadow(0px 10px 15px rgba(0,0,0,.15));
+    -webkit-filter: drop-shadow(0px 10px 10px rgba(0,0,0,.25));
+    filter: drop-shadow(0px 10px 10px rgba(0,0,0,.25));
+    transition: .3s;
+}
+
+img:hover {
+    transform: translateY(-20px);
+    -webkit-filter: drop-shadow(0px 30px 10px rgba(0,0,0,.15));
+    filter: drop-shadow(0px 30px 10px rgba(0,0,0,.15));
+}
+
+.icon a {
+    -webkit-filter: drop-shadow(0px 10px 10px rgba(0,0,0,.25));
+    filter: drop-shadow(0px 10px 10px rgba(0,0,0,.25));
+    transition: .3s;
+}
+
+.icon a:hover {
+    transform: translateY(-5px);
+    -webkit-filter: drop-shadow(0px 20px 10px rgba(0,0,0,.1));
+    filter: drop-shadow(0px 20px 10px rgba(0,0,0,.1));
 }
 
 .card.hero:hover {
@@ -67,6 +86,17 @@ img {
 .btn-primary {
     background: #00B1FF !important;
     border-color: #00B1FF !important;
+}
+
+.btn-outline-primary {
+    border-color: #00B1FF !important;
+    color: #00B1FF !important;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background: #00B1FF !important;
+    border-color: #00B1FF !important;
+    color: white !important;
 }
 
 .btn:focus, .btn:active, .btn:hover{
