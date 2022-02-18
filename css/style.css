@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Noto+Naskh+Arabic&family=Roboto&display=swap');
+@font-face {
+    font-family: 'arab';
+    src: url('font/UthmanTN1B Ver07.otf');
+}
 
 body {
     background-color: #EFF2FA;
@@ -7,7 +11,7 @@ body {
 }
 
 .text-ayat {
-    font-family: 'Noto Naskh Arabic', serif;
+    font-family: 'arab', serif;
 }
 
 ::-webkit-scrollbar {
