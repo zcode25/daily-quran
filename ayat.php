@@ -2,6 +2,20 @@
 
 require 'functions.php';
 
+if (isset($_POST['submit'])) {
+    $surah = $_POST['surah'];
+    $ayat = $_POST['ayat'];
+    setcookie('surah', $surah, time() + (86400 * 30), "/");
+    setcookie('ayat', $ayat, time() + (86400 * 30), "/");
+  
+    echo "
+        <script>
+            alert('Surah dan ayat telah disimpan');
+            window.location.href = 'index.php';
+        </script>
+    ";
+}
+
 $surah_id = $_GET["surah_id"];
 $surah = get_ayat($surah_id);
 
@@ -17,6 +31,7 @@ $surah = get_ayat($surah_id);
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/quran.png">
 
@@ -79,7 +94,7 @@ $surah = get_ayat($surah_id);
                         <div class="card-body">
                             <div class="row mb-1">
                                 <div class="col align-self-center">
-                                    <h5 class="card-text fw-bold"><?= $surah["no_surah"]; ?>. <?= $surah["nama_surah"]; ?></h5>
+                                    <h6 class="card-text fw-bold"><?= $surah["no_surah"]; ?>. <?= $surah["nama_surah"]; ?></h6>
                                 </div>
                                 <div class="col text-end">
                                     <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -127,10 +142,26 @@ $surah = get_ayat($surah_id);
             <div class="row">
                 <?php foreach ($surah["ayat"] as $surah) : ?>
                     <div class="col-12">
-                        <div class="card hero2 mb-3 p-4">
+                        <div class="card hero2 mb-3 p-4" id="<?= $surah["no_ayat"]; ?>">
                             <div class="row mb-3">
                                 <div class="col-6 col-md-8 col-xl-9 align-self-center">
-                                    <p class="card-text fw-bold">Ayat <?= $surah["no_ayat"]; ?></p>
+                                    <div class="d-flex flex-row bd-highlight align-items-center">
+                                    <div class="bd-highlight">
+                                        <form method="POST">
+                                            <input type="hidden" name="surah" value="<?= $surah_id ?>">
+                                            <input type="hidden" name="ayat" value="<?= $surah["no_ayat"]; ?>">
+                                            <?php if(isset($_COOKIE['surah']) && isset($_COOKIE['ayat']) && $_COOKIE['surah'] == $surah_id && $_COOKIE['ayat'] == $surah["no_ayat"]) : ?>
+                                                <button type="submit" class="btn btn-primary btn-sm" name="submit"><i class="bi bi-bookmark-fill"></i></button>
+                                            <?php else : ?>
+                                                <button type="submit" class="btn btn-light btn-sm" name="submit"><i class="bi bi-bookmark"></i></button>
+                                            <?php endif; ?>
+                                        </form>
+                                    </div>
+                                    <div class="bd-highlight">
+                                        <p class="card-text fw-bold ms-2">Ayat <?= $surah["no_ayat"]; ?></p>
+                                    </div>
+                                    </div>
+                                    
                                 </div>
                                 <div class="col-6 col-md-4 col-xl-3 align-self-center">
                                     <audio id="audio" controls="controls">

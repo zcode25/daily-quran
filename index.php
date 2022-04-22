@@ -16,6 +16,7 @@ $surah = get_surah();
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/quran.png">
 
@@ -69,6 +70,30 @@ $surah = get_surah();
             </div>
         </div>
     </section>
+
+    <?php if(isset($_COOKIE['surah']) && isset($_COOKIE['ayat']) ) : ?>
+        <section class="last" id="last">
+            <div class="container">
+                <div class="row mt-3 mb-3">
+                    <div class="col-xl-12" style="cursor: pointer;" onclick="document.location.href = 'ayat.php?surah_id=<?= $_COOKIE['surah'] ?>#<?= $_COOKIE['ayat'] ?>';">
+                        <div class="card">
+                        <div class="row g-0">
+                            <div class="col-2 col-xl-1 rounded d-flex align-items-center justify-content-center" style="background-color: #00B1FF;">
+                                <h6 class="card-text fw-bold"><i class="bi bi-bookmark-fill" style="color: white;"></i></h6>
+                            </div>
+                            <div class="col-10 col-xl-11">
+                                <div class="card-body">
+                                    <p class="card-subtitle mb-2 text-secondary info">Terakhir dibaca</p>
+                                    <h6 class="card-title fw-bold"><?= $surah[$_COOKIE['surah']-1]["nama_surah"]; ?> - <?=$_COOKIE['ayat']?></h6>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <section class="surah" id="surah">
         <div class="container">
